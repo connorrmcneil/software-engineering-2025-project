@@ -1,12 +1,12 @@
-import {Anchor, Container, Group, Text} from '@mantine/core'
-import {FeatherIcon} from '@phosphor-icons/react'
+import { Anchor, Container, Group, Text } from '@mantine/core'
+import { FeatherIcon } from '@phosphor-icons/react'
 
 import classes from '@/styles/FooterStyle.module.css'
 
 const links = [
-  {link: '/faq', label: 'Frequently Asked Questions'},
-  {link: '/privacypolicy', label: 'Privacy Policy'},
-  {link: '/admin', label: 'Admin Panel'}
+  { link: '/faq', label: 'Frequently Asked Questions' },
+  { link: '/privacypolicy', label: 'Privacy Policy' },
+  { link: '/admin', label: 'Nikana\'tu\'tite\'wk' }
 ]
 
 export function Footer() {

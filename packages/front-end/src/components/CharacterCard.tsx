@@ -1,4 +1,12 @@
-import {Button, Card, Center, Group, Image, Text} from '@mantine/core'
+/**
+ * Deprecated Component: CharacterCard
+ * 
+ * A card component to display a character with an image, name, and a button.
+ * 
+ * Author: Alison Cook
+ */
+
+import { Button, Card, Center, Group, Image, Text } from '@mantine/core'
 
 import CharacterPlaceholder from '@/assets/images/characters/placeholder.png'
 

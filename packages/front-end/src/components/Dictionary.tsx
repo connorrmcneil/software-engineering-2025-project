@@ -1,4 +1,4 @@
-import type {Word} from '@/types'
+import type { Word } from '@/types'
 
 import {
   ActionIcon,
@@ -15,18 +15,18 @@ import {
   TextInput,
   Tooltip
 } from '@mantine/core'
-import {useDisclosure} from '@mantine/hooks'
-import {BooksIcon, MagnifyingGlassIcon, SpeakerHighIcon} from '@phosphor-icons/react'
+import { useDisclosure } from '@mantine/hooks'
+import { BooksIcon, MagnifyingGlassIcon, SpeakerHighIcon } from '@phosphor-icons/react'
 import Fuse from 'fuse.js'
-import {useRef, useState} from 'react'
-import {useLoaderData} from 'react-router'
+import { useRef, useState } from 'react'
+import { useLoaderData } from 'react-router'
 
-import {wordsLoader} from '@/router/words.loader'
-import {toStorageUrl} from '@/utils'
+import { wordsLoader } from '@/router/words.loader'
+import { toStorageUrl } from '@/utils'
 
 export function Dictionary() {
-  const {words} = useLoaderData<typeof wordsLoader>()
-  const [opened, {open, close}] = useDisclosure(false)
+  const { words } = useLoaderData<typeof wordsLoader>()
+  const [opened, { open, close }] = useDisclosure(false)
 
   const fuse = new Fuse(words, {
     keys: [
@@ -48,18 +48,18 @@ export function Dictionary() {
   return (
     <>
       <Button variant="default" onClick={open} leftSection={<BooksIcon size={20} />}>
-        Dictionary
+        Kllusuwaqnn Kwilmumkl
       </Button>
       <Modal
         opened={opened}
         onClose={close}
         title={
           <Group gap="sm">
-            <Text fw="bold">Mi'kmaq Dictionary</Text>
+            <Text fw="bold">Kllusuwaqnn Kwilmumkl - Dictionary</Text>
             <Badge variant="light">{words.length} words</Badge>
           </Group>
         }
-        transitionProps={{transition: 'fade', duration: 200}}
+        transitionProps={{ transition: 'fade', duration: 200 }}
         fullScreen
         centered
         scrollAreaComponent={ScrollArea.Autosize}
@@ -72,16 +72,16 @@ export function Dictionary() {
             onChange={e => setQuery(e.currentTarget.value)}
             aria-label="Search dictionary"
           />
-          <SimpleGrid cols={{xl: 6, lg: 5, md: 4, sm: 3, base: 2}}>{wordCards}</SimpleGrid>
+          <SimpleGrid cols={{ xl: 6, lg: 5, md: 4, sm: 3, base: 2 }}>{wordCards}</SimpleGrid>
         </Stack>
       </Modal>
     </>
   )
 }
 
-function DictionaryCard({word}: {word: Word}) {
+function DictionaryCard({ word }: { word: Word }) {
   return (
-    <Paper withBorder style={{overflow: 'hidden'}}>
+    <Paper withBorder style={{ overflow: 'hidden' }}>
       <Stack>
         <Image src={toStorageUrl(word.imagePath)} alt={word.mikmaq} fit="cover" />
         <Group p="md" justify="space-between" wrap="nowrap" align="flex-start">
@@ -99,7 +99,7 @@ function DictionaryCard({word}: {word: Word}) {
   )
 }
 
-function AudioButton({src}: {src: string}) {
+function AudioButton({ src }: { src: string }) {
   const audioRef = useRef<HTMLAudioElement>(null)
 
   const onClick = () => {
