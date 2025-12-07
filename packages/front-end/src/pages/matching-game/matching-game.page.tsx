@@ -13,21 +13,21 @@
  * - Wenda Tan
  */
 
-import type {Month, Word} from '@/types'
+import type { Month, Word } from '@/types'
 
-import {BackgroundImage, Box, Paper, Select, SimpleGrid, Stack, Text, Title} from '@mantine/core'
-import {useEffect, useMemo, useReducer, useState} from 'react'
-import {useLoaderData} from 'react-router'
+import { BackgroundImage, Box, Paper, Select, SimpleGrid, Stack, Text, Title } from '@mantine/core'
+import { useEffect, useMemo, useReducer, useState } from 'react'
+import { useLoaderData } from 'react-router'
 
 import MatchingGameBackground from '@/assets/images/items/MatchingGameBackground.jpeg'
-import {wordsLoader} from '@/router/words.loader'
-import {toStorageUrl} from '@/utils'
-import {CorrectAnswerModal} from './CorrectAnswerModal'
-import {GameEndPopup} from './GameEndPopup'
-import {ScoreBeads} from './ScoreBeads'
-import {WordControls} from './WordControls'
-import {WordGrid} from './WordGrid'
-import {WrongAnswerModal} from './WrongAnswerModal'
+import { wordsLoader } from '@/router/words.loader'
+import { toStorageUrl } from '@/utils'
+import { CorrectAnswerModal } from './CorrectAnswerModal'
+import { GameEndPopup } from './GameEndPopup'
+import { ScoreBeads } from './ScoreBeads'
+import { WordControls } from './WordControls'
+import { WordGrid } from './WordGrid'
+import { WrongAnswerModal } from './WrongAnswerModal'
 
 /**
  * GameState: The single source of truth for the game's current status.
@@ -50,12 +50,12 @@ type GameState = {
 
 // Used for translated months
 const MONTH_TRANSLATIONS: Record<string, string> = {
-  September: "wikumkewiku's",
-  October: "wikewiku's",
-  November: "keptekewiku's",
-  December: "kesikewiku's",
-  January: "punamujuiku's",
-  February: 'apuknajit',
+  September: "Wikumkewiku's",
+  October: "Wikewiku's",
+  November: "Keptekewiku's",
+  December: "Kesikewiku's",
+  January: "Punamujuiku's",
+  February: 'Apuknajit',
   March: "Si'ko'ku's"
 }
 
@@ -63,13 +63,13 @@ const MONTH_TRANSLATIONS: Record<string, string> = {
  * GameAction: All possible events that can change the state.
  */
 type GameAction =
-  | {type: 'SET_INIT'; words: Word[]} // Load a new month of words
-  | {type: 'GENERATE'} // Build the grid for the current round
-  | {type: 'SELECT'; selectedImage: string} // Player clicked an image
-  | {type: 'TRY_AGAIN'} // Player closed the warning modal
-  | {type: 'RESTART'} // Player chose to restart the specific level
-  | {type: 'NEW_GAME'} // Player chose to restart the whole month
-  | {type: 'NEXT_WORD'} // Player chose to proceed to the next word
+  | { type: 'SET_INIT'; words: Word[] } // Load a new month of words
+  | { type: 'GENERATE' } // Build the grid for the current round
+  | { type: 'SELECT'; selectedImage: string } // Player clicked an image
+  | { type: 'TRY_AGAIN' } // Player closed the warning modal
+  | { type: 'RESTART' } // Player chose to restart the specific level
+  | { type: 'NEW_GAME' } // Player chose to restart the whole month
+  | { type: 'NEXT_WORD' } // Player chose to proceed to the next word
 
 const initialState: GameState = {
   index: 0,
@@ -89,7 +89,7 @@ const initialState: GameState = {
 
 export function WordMatchGame() {
   // Load all words from the router context
-  const {words} = useLoaderData<typeof wordsLoader>()
+  const { words } = useLoaderData<typeof wordsLoader>()
 
   /**
    * Group words by Month for the dropdown selector.
@@ -189,10 +189,10 @@ export function WordMatchGame() {
         }
         // incorrect
         if (state.wrongAttempts === 0) {
-          return {...state, showWrongModal: true, wrongAttempts: 1}
+          return { ...state, showWrongModal: true, wrongAttempts: 1 }
         }
 
-        return {...state, showSecondModal: true}
+        return { ...state, showSecondModal: true }
       }
       case 'NEXT_WORD': {
         const nextIndex = state.index + 1
@@ -208,10 +208,10 @@ export function WordMatchGame() {
       }
       case 'TRY_AGAIN':
         // Close warning modal
-        return {...state, showWrongModal: false}
+        return { ...state, showWrongModal: false }
       case 'RESTART':
         // Reset the current level (used after failing twice)
-        return {...state, showSecondModal: false, index: 0, successCount: 0, wrongAttempts: 0}
+        return { ...state, showSecondModal: false, index: 0, successCount: 0, wrongAttempts: 0 }
       case 'NEW_GAME': {
         // Reshuffle and start the month over
         const reshuffled = [...state.initWords].sort(() => Math.random() - 0.5)
@@ -240,45 +240,45 @@ export function WordMatchGame() {
   useEffect(() => {
     const monthWords = wordsByMonth[selectedMonth]?.slice(0, wordCount) || []
     const randomized = [...monthWords].sort(() => Math.random() - 0.5)
-    dispatch({type: 'SET_INIT', words: randomized})
+    dispatch({ type: 'SET_INIT', words: randomized })
   }, [wordsByMonth, selectedMonth, wordCount])
 
   // Effect 2: Generate Grid when words are loaded but grid is empty
   useEffect(() => {
     if (state.initWords.length > 0 && !state.initialized && !state.gameEnd) {
-      dispatch({type: 'GENERATE'})
+      dispatch({ type: 'GENERATE' })
     }
   }, [state.initWords, state.initialized, state.gameEnd])
 
   // Effect 3: Generate Grid when moving to the next level
   useEffect(() => {
     if (state.index < state.initWords.length && !state.gameEnd && !state.initialized) {
-      dispatch({type: 'GENERATE'})
+      dispatch({ type: 'GENERATE' })
     }
   }, [state.index, state.initWords.length, state.initialized, state.gameEnd])
 
   const handleNextWord = () => {
-    dispatch({type: 'NEXT_WORD'})
+    dispatch({ type: 'NEXT_WORD' })
   }
 
   // Correct/Incorrect Selection
   const handleSelection = (selectedImage: string) => {
     const isCorrect = selectedImage === state.displayImage
     if (isCorrect && state.displayAudio) new Audio(toStorageUrl(state.displayAudio)).play()
-    dispatch({type: 'SELECT', selectedImage})
+    dispatch({ type: 'SELECT', selectedImage })
   }
 
-  const handleTryAgain = () => dispatch({type: 'TRY_AGAIN'})
+  const handleTryAgain = () => dispatch({ type: 'TRY_AGAIN' })
   const handleRestart = () => {
-    dispatch({type: 'RESTART'})
-    dispatch({type: 'NEW_GAME'})
+    dispatch({ type: 'RESTART' })
+    dispatch({ type: 'NEW_GAME' })
   }
 
   const playAudio = () => {
     if (state.displayAudio) new Audio(toStorageUrl(state.displayAudio)).play()
   }
 
-  const newGame = () => dispatch({type: 'NEW_GAME'})
+  const newGame = () => dispatch({ type: 'NEW_GAME' })
 
   const roundDisplay = `${state.index}/${wordCount}`
 
@@ -286,24 +286,24 @@ export function WordMatchGame() {
     <BackgroundImage
       h="var(--app-height)"
       src={MatchingGameBackground}
-      p={{base: 'xs', sm: 'md', md: 'xl'}}
-      style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+      p={{ base: 'xs', sm: 'md', md: 'xl' }}
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
     >
       <Paper
         bg="rgba(255, 255, 255, 0.85)"
         // Responsive width: 100% on mobile, up to 1200px on desktop
-        w={{base: '100%', md: 1200}}
+        w={{ base: '100%', md: 1200 }}
         maw="100%"
-        p={{base: 'md', md: 'xl'}}
+        p={{ base: 'md', md: 'xl' }}
         radius="xl"
         shadow="xl"
       >
         <Stack gap="10px" mb="lg">
           <Title order={1} ta="center" fw={1300}>
-            klusuwaqnmina
+            Klusuwaqnminal
           </Title>
           <Text ta="center" c="dimmed" fs="italic">
-            Mi'kmaq Word Match
+            Word Match
           </Text>
         </Stack>
 
@@ -334,7 +334,7 @@ export function WordMatchGame() {
             Mobile: Stack (1 column)
             Desktop: Grid (2 columns)
         */}
-        <SimpleGrid cols={{base: 1, md: 2}} spacing={{base: 'lg', md: 'xl'}}>
+        <SimpleGrid cols={{ base: 1, md: 2 }} spacing={{ base: 'lg', md: 'xl' }}>
           {/* Left */}
           <Stack justify="flex-start" gap="lg">
             <Select

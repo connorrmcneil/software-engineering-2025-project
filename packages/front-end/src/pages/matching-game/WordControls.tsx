@@ -7,7 +7,7 @@
  *
  * Author: Wenda Tan
  */
-import {Button, Group, Stack, Text} from '@mantine/core'
+import { Button, Group, Stack, Text } from '@mantine/core'
 
 interface WordControlsProps {
   /** The text to display (usually the target word, hint, or translation) */
@@ -22,17 +22,17 @@ interface WordControlsProps {
  * Component: WordControls
  * Renders the horizontal toolbar containing the Audio Button, Target Text, and Round Counter.
  */
-export function WordControls({displayText, roundDisplay, playAudio}: WordControlsProps) {
+export function WordControls({ displayText, roundDisplay, playAudio }: WordControlsProps) {
   return (
     <Group gap="lg" align="center">
       {/* Audio Trigger Button */}
       <Button onClick={playAudio} size="lg" color="blue">
         <Stack gap={0} align="center">
           <Text span size="lg" fw={700} lh={1.2}>
-            almila'si
+            Almila'si
           </Text>
           <Text span size="10px" fw={200} lh={1}>
-            play audio
+            Play Audio
           </Text>
         </Stack>
       </Button>

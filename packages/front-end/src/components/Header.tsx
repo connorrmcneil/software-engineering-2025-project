@@ -1,20 +1,20 @@
-import {Burger, Container, Group} from '@mantine/core'
-import {useDisclosure} from '@mantine/hooks'
-import {Link, useLocation} from 'react-router'
+import { Burger, Container, Group } from '@mantine/core'
+import { useDisclosure } from '@mantine/hooks'
+import { Link, useLocation } from 'react-router'
 
 import classes from '@/styles/HeaderStyle.module.css'
-import {Dictionary} from './Dictionary'
+import { Dictionary } from './Dictionary'
 
 const links = [
-  {link: '/', label: 'Home'},
-  {link: '/matching-game', label: 'Word Game'},
-  {link: '/eskasoni-island-game', label: 'Goat Island Game'},
-  {link: '/admin', label: 'Admin'}
+  { link: '/', label: 'Apaja\'si Nikantuk' },
+  { link: '/matching-game', label: 'Klusuwaqnminal' },
+  { link: '/eskasoni-island-game', label: 'Te\'puljwe\'kati Waisisk' },
+  { link: '/admin', label: 'Nikana\'tu\'tite\'wk' }
 ]
 
 export function Header() {
   const location = useLocation()
-  const [opened, {toggle}] = useDisclosure(false)
+  const [opened, { toggle }] = useDisclosure(false)
 
   const items = links.map(link => (
     <Link

@@ -9,9 +9,9 @@
  *
  * Author: Wenda Tan
  */
-import {Button, Image, Modal, Stack, Text} from '@mantine/core'
+import { Button, Image, Modal, Stack, Text } from '@mantine/core'
 
-import {toStorageUrl} from '@/utils'
+import { toStorageUrl } from '@/utils'
 
 // --- Interface Definitions ---
 interface WrongAnswerModalProps {
@@ -43,20 +43,20 @@ export function WrongAnswerModal({
         {firstAttempt ? (
           <>
             <Text size="lg" fw={500} color="yellow">
-              kjinu'kwalsi ap
+              Kjinu'kwalsi ap
             </Text>
             <Text size="10px" c="dimmed">
-              Try again.
+              Try Again
             </Text>
             <Button color="yellow" onClick={onTryAgain}>
-              Okay
+              Si'owa'si
             </Button>
           </>
         ) : (
           /* Branch 2: Second Attempt (Game Over / Reveal) */
           <>
             <Text size="lg" fw={500} color="yellow">
-              Incorrect
+              Kjinu'kwalsi Ap - Game Over
             </Text>
 
             {correctImage && (
@@ -67,13 +67,13 @@ export function WrongAnswerModal({
                 h={150}
                 fit="contain"
                 radius="md"
-                style={{border: '1px solid #eee'}}
+                style={{ border: '1px solid #eee' }}
               />
             )}
 
             {/* Answer Reveal Text */}
             <Text size="sm" ta="center">
-              The correct word was <b>{correctWord}</b>
+              Tetpaqa'q: <b>{correctWord}</b>
               <br />
               <Text span c="dimmed" size="xs">
                 {translation || 'No translation available yet.'}
@@ -81,7 +81,7 @@ export function WrongAnswerModal({
             </Text>
 
             <Button color="yellow" fullWidth onClick={onRestart}>
-              Start a new game
+              Si'owa'si
             </Button>
           </>
         )}

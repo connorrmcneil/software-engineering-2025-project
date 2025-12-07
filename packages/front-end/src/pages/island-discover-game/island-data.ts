@@ -20,7 +20,6 @@ import tiam from '@/assets/images/island_game/animals/tiam.png'
 import wowkwis from '@/assets/images/island_game/animals/wowkwis.png'
 
 // Map Background Sections (Used as the game board)
-import islandStart from '@/assets/images/island_game/map/island_start.png'
 import island1 from '@/assets/images/island_game/map/island_1.png'
 import island2 from '@/assets/images/island_game/map/island_2.png'
 import island3 from '@/assets/images/island_game/map/island_3.png'
@@ -28,6 +27,7 @@ import island4 from '@/assets/images/island_game/map/island_4.png'
 import island5 from '@/assets/images/island_game/map/island_5.png'
 import island6 from '@/assets/images/island_game/map/island_6.png'
 import islandFinish from '@/assets/images/island_game/map/island_finish.png'
+import islandStart from '@/assets/images/island_game/map/island_start.png'
 
 /**
  * Represents a single animal entity in the game.
@@ -72,47 +72,47 @@ export interface Level {
  * the app advances to the next index in this array.
  */
 export const GAME_LEVELS: Level[] = [
-  { 
-    levelId: 0, 
-    mapImage: islandStart, 
+  {
+    levelId: 0,
+    mapImage: islandStart,
     targetAnimal: ANIMALS[0], // Raccoon
-    characterPos: { top: '45%', left: '22%' } 
+    characterPos: { top: '45%', left: '22%' }
   },
-  { 
-    levelId: 1, 
-    mapImage: island1, 
+  {
+    levelId: 1,
+    mapImage: island1,
     targetAnimal: ANIMALS[1], // Rabbit
-    characterPos: { top: '65%', left: '22%' } 
+    characterPos: { top: '65%', left: '22%' }
   },
-  { 
-    levelId: 2, 
-    mapImage: island2, 
+  {
+    levelId: 2,
+    mapImage: island2,
     targetAnimal: ANIMALS[2], // Beaver
-    characterPos: { top: '42%', left: '35%' } 
+    characterPos: { top: '42%', left: '35%' }
   },
-  { 
-    levelId: 3, 
-    mapImage: island3, 
+  {
+    levelId: 3,
+    mapImage: island3,
     targetAnimal: ANIMALS[3], // Deer
-    characterPos: { top: '50%', left: '50%' } 
+    characterPos: { top: '50%', left: '50%' }
   },
-  { 
-    levelId: 4, 
-    mapImage: island4, 
+  {
+    levelId: 4,
+    mapImage: island4,
     targetAnimal: ANIMALS[4], // Bear
-    characterPos: { top: '30%', left: '80%' } 
+    characterPos: { top: '30%', left: '80%' }
   },
-  { 
-    levelId: 5, 
-    mapImage: island5, 
+  {
+    levelId: 5,
+    mapImage: island5,
     targetAnimal: ANIMALS[5], // Moose
-    characterPos: { top: '55%', left: '75%' } 
+    characterPos: { top: '55%', left: '75%' }
   },
-  { 
-    levelId: 6, 
-    mapImage: island6, 
+  {
+    levelId: 6,
+    mapImage: island6,
     targetAnimal: ANIMALS[6], // Fox
-    characterPos: { top: '55%', left: '72%' } 
+    characterPos: { top: '55%', left: '72%' }
   }
 ]
 

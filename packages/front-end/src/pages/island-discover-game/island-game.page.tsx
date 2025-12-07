@@ -7,13 +7,13 @@
  * Author: Wenda Tan
  */
 
-import {Box, Button, Container, Group, Image, Modal, SimpleGrid, Stack, Text, Title} from '@mantine/core'
-import {useMemo, useRef, useState} from 'react'
+import { Box, Button, Container, Group, Image, Modal, SimpleGrid, Stack, Text, Title } from '@mantine/core'
+import { useMemo, useRef, useState } from 'react'
 
 import boyImg from '@/assets/images/island_game/boy.png'
 import girlImg from '@/assets/images/island_game/girl.png'
-import {ANIMALS, FINISH_MAP, GAME_LEVELS} from './island-data'
-import {IslandSuccessModal} from './IslandSuccessModal'
+import { ANIMALS, FINISH_MAP, GAME_LEVELS } from './island-data'
+import { IslandSuccessModal } from './IslandSuccessModal'
 
 // --- Types ---
 type CharacterType = 'boy' | 'girl' | null
@@ -127,30 +127,30 @@ export function IslandGamePage() {
   // --- RENDER 1: SELECTION SCREEN ---
   if (gameState === 'select-char') {
     return (
-      <Container py="sm" size="sm" mih="70dvh" style={{display: 'flex', alignItems: 'center'}}>
+      <Container py="sm" size="sm" mih="70dvh" style={{ display: 'flex', alignItems: 'center' }}>
         <Stack align="center" gap="xl" w="100%">
           <Title order={1} ta="center">
             Choose Your Character
           </Title>
-          <Group gap="xl" justify="center" style={{flexDirection: 'row'}}>
+          <Group gap="xl" justify="center" style={{ flexDirection: 'row' }}>
             <Stack
               align="center"
               onClick={() => handleCharacterSelect('boy')}
-              style={{cursor: 'pointer', transition: 'transform 0.2s'}}
+              style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
             >
-              <Image src={boyImg} w={{base: 120, md: 180}} />
+              <Image src={boyImg} w={{ base: 120, md: 180 }} />
               <Button size="lg" fullWidth>
-                almila'si
+                Almila'si
               </Button>
             </Stack>
             <Stack
               align="center"
               onClick={() => handleCharacterSelect('girl')}
-              style={{cursor: 'pointer', transition: 'transform 0.2s'}}
+              style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
             >
-              <Image src={girlImg} w={{base: 120, md: 180}} />
+              <Image src={girlImg} w={{ base: 120, md: 180 }} />
               <Button size="lg" fullWidth>
-                almila'si
+                Almila'si
               </Button>
             </Stack>
           </Group>
@@ -161,12 +161,12 @@ export function IslandGamePage() {
 
   // --- RENDER 2: MAIN GAME ---
   return (
-    <Container fluid p={{base: 'xs', md: 'lg'}} mih="100dvh">
+    <Container fluid p={{ base: 'xs', md: 'lg' }} mih="100dvh">
       {/* Top Bar */}
       <Group justify="space-between" mb="sm" align="flex-end">
         <Stack gap={0}>
           <Title order={2} fw={800}>
-            Te'puljwe'kati waisisk
+            Te'puljwe'kati Waisisk
           </Title>
           <Title order={4} c="dimmed">
             Level {currentLevelIdx + 1}
@@ -181,21 +181,21 @@ export function IslandGamePage() {
       {/* --- MODALS --- */}
 
       {/* 1. Game Over Modal */}
-      <Modal opened={showGameOver} onClose={() => {}} withCloseButton={false} centered title="">
+      <Modal opened={showGameOver} onClose={() => { }} withCloseButton={false} centered title="">
         <Stack align="center">
           <Text c="green" fw={700} size="xl">
-            kjinu'kwalsi ap
+            Kjinu'kwalsi Ap
           </Text>
           <Text c="green" fw={700} size="10px">
-            Try again
+            Try Again
           </Text>
-          <Text ta="center">tetpaqa'q:</Text>
+          <Text ta="center">Tetpaqa'q:</Text>
           <Image src={currentLevel?.targetAnimal.image} w={120} fit="contain" />
           <Text fw={900} size="lg">
             {currentLevel?.targetAnimal.mikmaq}
           </Text>
           <Button fullWidth onClick={restartGame} color="green">
-            almila'si
+            Almila'si
           </Button>
         </Stack>
       </Modal>
@@ -207,18 +207,18 @@ export function IslandGamePage() {
       <Modal
         opened={quizOpen}
         onClose={() => !wrongAttempts && setQuizOpen(false)}
-        title={`taluisit wla waisis ${currentLevel?.targetAnimal.mikmaq}?`}
+        title={`Taluisit wla waisis: ${currentLevel?.targetAnimal.mikmaq}?`}
         size="lg"
         centered
-        styles={{content: {overflow: 'hidden'}}}
+        styles={{ content: { overflow: 'hidden' } }}
       >
         <Stack>
           {wrongAttempts === 1 && (
             <Text c="purple" ta="center" fw={700}>
-              kjinu'kwalsi ap (Try Again)
+              Kjinu'kwalsi Ap (Try Again)
             </Text>
           )}
-          <SimpleGrid cols={{base: 1, sm: 3}}>
+          <SimpleGrid cols={{ base: 1, sm: 3 }}>
             {quizOptions.map(animal => (
               <Stack
                 key={animal.id}
@@ -256,7 +256,7 @@ export function IslandGamePage() {
           <Image
             src={gameState === 'victory' ? FINISH_MAP : currentLevel.mapImage}
             w="100%"
-            style={{display: 'block'}}
+            style={{ display: 'block' }}
           />
 
           {gameState === 'victory' && (
@@ -270,12 +270,12 @@ export function IslandGamePage() {
               h="100%"
               bg="rgba(255,255,255,0.6)"
             >
-              <Title order={1} c="green" style={{textShadow: '2px 2px white', fontSize: '3rem'}}>
+              <Title order={1} c="green" style={{ textShadow: '2px 2px white', fontSize: '3rem' }}>
                 Kisu'lkw!
               </Title>
               <Group mt="md">
                 <Button size="xl" onClick={restartGame}>
-                  almila'si
+                  Almila'si
                 </Button>
                 <Button size="xl" variant="outline" onClick={handleChangeCharacter}>
                   Pick Character
@@ -301,7 +301,7 @@ export function IslandGamePage() {
                 zIndex: 10
               }}
             >
-              <Box style={{animation: 'bounce 2s infinite'}}>
+              <Box style={{ animation: 'bounce 2s infinite' }}>
                 <Image src={character === 'boy' ? boyImg : girlImg} />
               </Box>
             </Box>

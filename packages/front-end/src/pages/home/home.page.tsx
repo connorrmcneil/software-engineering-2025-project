@@ -1,10 +1,9 @@
-import {Button, Container, Group, Image, List, Stack, Text, Title} from '@mantine/core'
-import {useMemo, useState} from 'react'
-import {Link} from 'react-router'
+import { Button, Container, Group, Image, List, Stack, Text, Title } from '@mantine/core'
+import { useMemo, useState } from 'react'
 
 import character1Dance from '@/assets/images/characters/character1-dance.png'
 import character2Dance from '@/assets/images/characters/character2-dance.png'
-import {GameSelectionModal} from '@/components/GameSelection'
+import { GameSelectionModal } from '@/components/GameSelection'
 import classes from './Home.module.css'
 
 export function HomePage() {
@@ -20,7 +19,7 @@ export function HomePage() {
       <div className={classes.inner}>
         <div className={classes.content}>
           <Title className={classes.title}>
-            Kekina’muek <span className={classes.highlight}>Miꞌkmawiꞌsimk</span>
+            Ekina'masimk <span className={classes.highlight}>L'nui'simk</span>
           </Title>
           <Text c="dimmed" mt="md">
             Learning the Mi'kmaw language
@@ -28,13 +27,13 @@ export function HomePage() {
 
           <List mt={30} spacing="sm" size="sm">
             <List.Item>
-              <b>Matching</b> – learners match words to pictures
+              <b>Toqatu elatikl klusuaqn aqq napwi'kaqn</b> – match words to pictures
             </List.Item>
             <List.Item>
-              <b>Conversational words and animals</b> – learn conversational words and animals
+              <b>Kina'masi teli aknutmamk aqq waisisk</b> – learn conversational words and animals
             </List.Item>
             <List.Item>
-              <b>Teacher access</b> – teachers can add new words
+              <b>Nuji-kina'muet kisi ankui-ika'tutaq klusuwaqnn</b> – teachers can add new words
             </List.Item>
           </List>
 
@@ -42,23 +41,12 @@ export function HomePage() {
             <Button onClick={() => setModalOpen(true)} radius="xl" size="md" className={classes.control}>
               <Stack gap={0} align="center">
                 <Text span fw={700} lh={1.2}>
-                  almila'si
+                  Almila'si
                 </Text>
                 <Text span size="10px" fw={200} lh={1}>
-                  play
+                  Play
                 </Text>
               </Stack>
-            </Button>
-
-            <Button
-              component={Link}
-              to="/dictionary"
-              variant="default"
-              radius="xl"
-              size="md"
-              className={classes.control}
-            >
-              Dictionary
             </Button>
           </Group>
         </div>
