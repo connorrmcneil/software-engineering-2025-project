@@ -1,3 +1,9 @@
+/**
+ * Purpose: Navigation header component with Mi'kmaq/English menu items and dictionary access
+ * 
+ * Author: Jack Greenlaw
+ * Edits: Alison Cook
+ */
 import { Burger, Container, Group, Stack, Text } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { Link, useLocation } from 'react-router'
@@ -12,6 +18,12 @@ const links = [
   { link: '/admin', mikmaq: 'Nikana\'tu\'tite\'wk', english: 'Admin' }
 ]
 
+/**
+ * Purpose: Renders the application header with navigation links, mobile burger menu, and dictionary button.
+ * Displays bilingual navigation items (Mi'kmaq above English text) and highlights the active page.
+ * 
+ * Parameters: None
+ */
 export function Header() {
   const location = useLocation()
   const [opened, { toggle }] = useDisclosure(false)
