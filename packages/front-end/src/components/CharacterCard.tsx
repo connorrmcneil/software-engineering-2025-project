@@ -1,7 +1,6 @@
 /**
- * Deprecated Component: CharacterCard
+ * Purpose: CharacterCard component (deprecated)
  * 
- * A card component to display a character with an image, name, and a button.
  * 
  * Author: Alison Cook
  */
@@ -10,6 +9,11 @@ import { Button, Card, Center, Group, Image, Text } from '@mantine/core'
 
 import CharacterPlaceholder from '@/assets/images/characters/placeholder.png'
 
+/**
+ * Purpose: A card component to display a character with an image, name, and a button.
+ * 
+ * Parameters: None, The image and character identifier "Character #" is still hardcoded.
+ */
 export function CharacterCard() {
   return (
     <Card shadow="sm" padding="lg" radius="md" withBorder>

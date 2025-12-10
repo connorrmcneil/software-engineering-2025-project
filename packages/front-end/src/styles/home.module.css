@@ -1,3 +1,20 @@
+/**
+ * Purpose: Styles for the home/landing page layout, responsive design, 
+           and visual hierarchy
+ * 
+ * Author: Alison Cook
+ *
+ * Made with Mantine's "Hero with bullets" from the "Hero headers" category
+ *
+ * Styling:
+ * - .inner: Main container with flexbox layout, centers content vertically with gap spacing
+ * - .content: Left column content area with max-width and responsive margins
+ * - .title: Hero title with custom font (Outfit), responsive font sizes, and proper line height
+ * - .control: Play button styling with responsive flex behavior on mobile
+ * - .image: Character image (500x500px) that hides on medium screens and below
+ * - .highlight: Highlight styling for text with blue background and border radius
+ */
+
 .inner {
   display: flex;
   align-items: center;
