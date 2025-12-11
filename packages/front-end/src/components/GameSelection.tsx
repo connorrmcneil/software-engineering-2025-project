@@ -5,6 +5,7 @@
  * the user to navigate between different mini-games (Word Match and Goat Island).
  *
  * Authors: Wenda Tan
+ * Edit: Alison Cook (added data-cy selector for testing)
  */
 
 import { Button, Modal, Paper, SimpleGrid, Stack, Text, ThemeIcon } from '@mantine/core'
@@ -121,7 +122,11 @@ function GameOptionCard({ to, title, description, color, icon }: GameOptionCardP
           </Text>
         </Stack>
 
-        <Button variant="light" color={color} fullWidth mt="sm">
+        <Button 
+          data-cy={`play-button-${description.toLowerCase().replace(/\s+/g, '-')}`}
+          variant="light" 
+          color={color} 
+          fullWidth mt="sm">
           <Stack gap={0} align="center">
             <Text span fw={700} lh={1.2}>
               Almila'si
