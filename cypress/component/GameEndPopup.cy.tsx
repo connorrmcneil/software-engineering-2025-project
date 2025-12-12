@@ -7,7 +7,7 @@
  * Rendering score indicators (beads)
  * Ensuring the "New Game" button triggers its callback
  *
- * @Author Connor Gerrard A00465850
+ * @Author Connor Gerrard
  */
 
 /// <reference types="cypress" />
