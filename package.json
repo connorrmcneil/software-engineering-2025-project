@@ -14,7 +14,8 @@
     "dev": "concurrently \"bun run --filter=front-end dev\" \"bun run --filter=api dev\"",
     "format": "prettier --write ./packages/**/*.{js,jsx,ts,tsx,json,css,md}",
     "typecheck": "tsc -b --noEmit packages/*",
-    "build": "concurrently \"bun run --filter=front-end build\" \"bun run --filter=api build\""
+    "build": "concurrently \"bun run --filter=front-end build\" \"bun run --filter=api build\"",
+    "test": "cypress open"
   },
   "workspaces": [
     "packages/*"
