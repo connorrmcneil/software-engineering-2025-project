@@ -1,27 +1,27 @@
 /**
  * Purpose: Homepage component
- * 
+ *
  * Made with Mantine's "Hero with bullets" from the "Hero headers" category
- * 
+ *
  * Author: Alison Cook
  */
-import { Button, Container, Group, Image, List, Stack, Text, Title } from '@mantine/core'
-import { useMemo, useState } from 'react'
+import {Button, Container, Group, Image, List, Stack, Text, Title} from '@mantine/core'
+import {useMemo, useState} from 'react'
 
 import character1Dance from '@/assets/images/characters/character1-dance.png'
 import character2Dance from '@/assets/images/characters/character2-dance.png'
-import { GameSelectionModal } from '@/components/GameSelection'
+import {GameSelectionModal} from '@/components/GameSelection'
 import classes from '@/styles/home.module.css'
 
 /**
- * Purpose: Renders the home/landing page with title, description, feature list, 
+ * Purpose: Renders the home/landing page with title, description, feature list,
  * and play button
- * 
+ *
  * Parameters: None
  */
 export function HomePage() {
   const [modalOpen, setModalOpen] = useState(false)
-  
+
   /**
    * Purpose: Randomly selects character 1 or 2 to be shown on the landing page
    */

@@ -1,13 +1,13 @@
 .container {
-    background-image: url('../../assets/images/items/Forrest-Background.png');
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-    width: 100vw;
-    margin-left: calc(var(--mantine-spacing-md) * -1);
-    margin-right: calc(var(--mantine-spacing-md) * -1);
-    margin-top: calc(var(--mantine-spacing-md) * -1);
-    margin-bottom: calc(var(--mantine-spacing-md) * -1);
-    padding: var(--mantine-spacing-md);
-    position: relative;
-  }
+  background-image: url('../../assets/images/items/Forrest-Background.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  width: 100vw;
+  margin-left: calc(var(--mantine-spacing-md) * -1);
+  margin-right: calc(var(--mantine-spacing-md) * -1);
+  margin-top: calc(var(--mantine-spacing-md) * -1);
+  margin-bottom: calc(var(--mantine-spacing-md) * -1);
+  padding: var(--mantine-spacing-md);
+  position: relative;
+}

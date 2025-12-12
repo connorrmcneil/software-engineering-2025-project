@@ -1,4 +1,4 @@
-import { Button, Flex, Group, Image, Modal, Text } from '@mantine/core'
+import {Button, Flex, Group, Image, Modal, Text} from '@mantine/core'
 
 import PointPlaceholder from '@/assets/images/icons/pointPlaceholder.jpg'
 
@@ -15,13 +15,13 @@ type GameEndPopupProps = {
   onNewGame: () => void
 }
 
-export function GameEndPopup({ opened, onNewGame }: GameEndPopupProps) {
+export function GameEndPopup({opened, onNewGame}: GameEndPopupProps) {
   // Only allowed 3 words this year so these values are static
   const correctAnswers = 3
   const totalWords = 3
 
   // Create an boolean array representing correct/incorrect answers
-  const results = Array.from({ length: totalWords }, (_, i) => i < correctAnswers)
+  const results = Array.from({length: totalWords}, (_, i) => i < correctAnswers)
 
   return (
     <>
@@ -64,7 +64,7 @@ export function GameEndPopup({ opened, onNewGame }: GameEndPopupProps) {
                 width="s"
                 height="s"
                 radius="s"
-                style={{ opacity: isCorrect ? 1 : 0.3 }} // faded for wrong ones
+                style={{opacity: isCorrect ? 1 : 0.3}} // faded for wrong ones
               />
             </div>
           ))}

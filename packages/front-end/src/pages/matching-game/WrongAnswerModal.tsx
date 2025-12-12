@@ -9,9 +9,9 @@
  *
  * Author: Wenda Tan
  */
-import { Button, Image, Modal, Stack, Text } from '@mantine/core'
+import {Button, Image, Modal, Stack, Text} from '@mantine/core'
 
-import { toStorageUrl } from '@/utils'
+import {toStorageUrl} from '@/utils'
 
 // --- Interface Definitions ---
 interface WrongAnswerModalProps {
@@ -67,7 +67,7 @@ export function WrongAnswerModal({
                 h={150}
                 fit="contain"
                 radius="md"
-                style={{ border: '1px solid #eee' }}
+                style={{border: '1px solid #eee'}}
               />
             )}
 
