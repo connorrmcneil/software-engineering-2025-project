@@ -1,5 +1,7 @@
 /**
  * Script to create the default admin user.
+ *
+ * @author Sean MacDougall
  */
 
 import {hash} from 'bcryptjs'

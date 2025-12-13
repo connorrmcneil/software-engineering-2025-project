@@ -1,3 +1,9 @@
+/**
+ * Controller for user-related routes.
+ *
+ * @author Sean MacDougall
+ */
+
 import {Router} from 'express'
 
 import {requireAuth} from '@/middleware/auth.middleware'

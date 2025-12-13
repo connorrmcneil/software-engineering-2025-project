@@ -1,5 +1,7 @@
 /**
- * Script to import starting word data into the Prisma database.
+ * Script to import words into the database.
+ *
+ * @author Sean MacDougall
  */
 
 import fs from 'fs'

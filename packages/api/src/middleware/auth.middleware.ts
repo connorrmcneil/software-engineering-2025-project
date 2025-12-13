@@ -1,3 +1,9 @@
+/**
+ * Middleware to handle authentication using JWTs.
+ *
+ * @author Sean MacDougall
+ */
+
 import type {NextFunction, Request, Response} from 'express'
 import type {JwtPayload} from 'jsonwebtoken'
 

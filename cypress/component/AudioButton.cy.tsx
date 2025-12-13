@@ -4,6 +4,8 @@
  * Component test for AudioButton
  * - Verifies the audio element has the provided `src`
  * - Verifies clicking the action icon triggers audio.play()
+ *
+ * Author: Sean MacDougall
  */
 
 import {MantineProvider} from '@mantine/core'

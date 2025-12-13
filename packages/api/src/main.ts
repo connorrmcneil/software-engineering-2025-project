@@ -1,3 +1,9 @@
+/**
+ * Main entry point for the API server.
+ *
+ * @author Sean MacDougall
+ */
+
 import 'dotenv/config' // load env variables from a .env file
 
 import path from 'path'

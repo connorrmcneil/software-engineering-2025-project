@@ -1,3 +1,9 @@
+/**
+ * Controller for authentication routes.
+ *
+ * @author Sean MacDougall
+ */
+
 import {compare} from 'bcryptjs'
 import {Router} from 'express'
 import {sign} from 'jsonwebtoken'
