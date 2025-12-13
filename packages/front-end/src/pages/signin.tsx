@@ -1,3 +1,9 @@
+/**
+ * Sign-in page for user authentication.
+ *
+ * @author Sean MacDougall
+ */
+
 import {BackgroundImage, Button, Center, Paper, PasswordInput, Text, TextInput} from '@mantine/core'
 import {isNotEmpty, useForm} from '@mantine/form'
 import {ArrowLeftIcon} from '@phosphor-icons/react'

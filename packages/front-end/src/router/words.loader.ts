@@ -1,3 +1,9 @@
+/**
+ * Loader to fetch words data from the API.
+ *
+ * @author Sean MacDougall
+ */
+
 import type {Word} from '@/types'
 
 import {api} from '@/api'

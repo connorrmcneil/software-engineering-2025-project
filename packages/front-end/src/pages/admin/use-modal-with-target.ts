@@ -1,3 +1,9 @@
+/**
+ * Custom hook to manage modal state with an associated target value.
+ *
+ * @author Sean MacDougall
+ */
+
 import {useDisclosure} from '@mantine/hooks'
 import {useState} from 'react'
 

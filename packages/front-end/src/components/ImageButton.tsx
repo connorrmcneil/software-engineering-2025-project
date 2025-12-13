@@ -1,3 +1,9 @@
+/**
+ * ImageButton component to display an image in a modal on click.
+ *
+ * @author Sean MacDougall
+ */
+
 import type {ActionIconProps} from '@mantine/core'
 
 import {ActionIcon, Modal} from '@mantine/core'

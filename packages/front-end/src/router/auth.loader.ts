@@ -1,3 +1,9 @@
+/**
+ * Authentication loader to verify user session.
+ *
+ * @author Sean MacDougall
+ */
+
 import {redirect} from 'react-router'
 
 import {api} from '@/api'

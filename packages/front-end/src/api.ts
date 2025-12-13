@@ -1,3 +1,9 @@
+/**
+ * API client setup using Axios.
+ *
+ * @author Sean MacDougall
+ */
+
 import axios from 'axios'
 
 // create an API client with base URL from environment variables

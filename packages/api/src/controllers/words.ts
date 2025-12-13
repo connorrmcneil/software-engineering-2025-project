@@ -1,3 +1,9 @@
+/**
+ * Controller for word-related routes.
+ *
+ * @author Sean MacDougall
+ */
+
 import fs from 'fs'
 import path from 'path'
 import {Router} from 'express'

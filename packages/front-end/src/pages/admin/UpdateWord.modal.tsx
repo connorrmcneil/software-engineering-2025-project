@@ -1,3 +1,9 @@
+/**
+ * Modal for updating an existing word.
+ *
+ * @author Sean MacDougall
+ */
+
 import type {Word} from '@/types'
 import type {ModalProps} from '@mantine/core'
 

@@ -1,3 +1,9 @@
+/**
+ * Admin page for managing words.
+ *
+ * @author Sean MacDougall
+ */
+
 import type {adminLoader} from '@/router/admin.loader'
 import type {Word} from '@/types'
 import type {ModalProps, TableData} from '@mantine/core'

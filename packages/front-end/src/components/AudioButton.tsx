@@ -1,3 +1,9 @@
+/**
+ * AudioButton component to play audio on click.
+ *
+ * @author Sean MacDougall
+ */
+
 import type {ActionIconProps} from '@mantine/core'
 
 import {ActionIcon} from '@mantine/core'

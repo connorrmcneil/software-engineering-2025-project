@@ -1,3 +1,9 @@
+/**
+ * Modal for creating a new word.
+ *
+ * @author Sean MacDougall
+ */
+
 import type {ModalProps} from '@mantine/core'
 
 import {Button, FileInput, Group, Modal, Select, Text, TextInput} from '@mantine/core'

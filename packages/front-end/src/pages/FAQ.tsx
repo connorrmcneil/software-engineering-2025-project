@@ -14,9 +14,39 @@ export function FAQ() {
         </Title>
 
         <Title order={2} pt={20} pb={20} fw={600} fs="italic" c="blue.6">
-          How do I add words as administrator.
+          How do I add words as administrator
         </Title>
-        <Text size="md">Enter Tutorial Here</Text>
+        <Text size="md" mb={8}>
+          Follow these steps to add, edit, or remove words from the application using the admin interface.
+        </Text>
+        <Text size="md" mb={6}>
+          <strong>1. Sign in</strong>: Open the admin sign-in through the admin page button and enter your admin
+          credentials.
+        </Text>
+        <Text size="md" mb={6}>
+          <strong>2. Open the Add Word modal</strong>: On the admin page click the <em>Add word</em> button in the
+          top-right to open the word creation modal.
+        </Text>
+        <Text size="md" mb={6}>
+          <strong>3. Complete the form</strong>: Fill in the fields:
+          <br />• <code>Mi'kmaq</code> — the word in Mi'kmaq
+          <br />• <code>English</code> — the English translation
+          <br />• <code>Starts in</code> — month that the word appears in game modes (select)
+          <br />• <code>Image</code> — upload an image file for the word (required to be PNG/JPEG)
+          <br />• <code>Audio</code> — upload an audio file for the word (required to be MP3)
+        </Text>
+        <Text size="md" mb={6}>
+          <strong>4. Save the word</strong>: Click <em>Add word</em> in the modal. On success the modal will close, the
+          word list will refresh, and the new word will appear in the table.
+        </Text>
+        <Text size="md" mb={6}>
+          <strong>5. Edit or delete</strong>: Use the action menu (three dots) on a row to edit or delete a word.
+          Editing opens a modal similar to the create form. Deleting requires confirmation — check the confirmation box
+          and click <em>Delete word</em> to permanently remove it.
+        </Text>
+        <Text size="md">
+          <strong>Note</strong>: All changes made via the admin page update the connected database and media storage
+        </Text>
 
         <Title order={2} pt={40} pb={20} fw={600} fs="italic" c="blue.6">
           What is Asukom?
